@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Animated Buttons Collection - More</title>
+    <style>
+        /* Your existing styles... */
+        * {
+            margin: 0;
+            padding: 10;
+            box-sizing: border-box;
+        }
+        body {
+            background: #0f0f23;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: "Segoe UI", sans-serif;
+            padding: 70px;
+            gap: 25px;
+        }
+
+        /* Button Base Styles */
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            outline: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Title */
+        h1 {
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.7);
+            font-size: 2.2rem;
+        }
+
+        /* Container for organization */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 220px;
+        }
+        .label {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        /* ===== NEW BUTTONS ===== */
+
+        /* Button 17: Shatter Effect */
+        .btn-17 {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 8px;
+        }
+        .btn-17:hover {
+            animation: shatter 0.4s forwards;
+        }
+        @keyframes shatter {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0) rotate(180deg); opacity: 0; }
+        }
+
+        /* Button 18: Pixel Glitch */
+        .btn-18 {
+            background: #000;
+            border: 2px solid #00ff88;
+            color: #00ff88;
+            font-family: "Courier New", monospace;
+        }
+        .btn-18:hover::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+            z-index: -1;
+            filter: blur(5px);
+            animation: glitch 0.2s infinite;
+        }
+        @keyframes glitch {
+            0%, 100% { opacity: 1; transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        /* Button 19: Float Away */
+        .btn-19 {
+            background: linear-gradient(135deg, #00cec9, #0984e3);
+            border-radius: 50px;
+        }
+        .btn-19:hover {
+            animation: float 2s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Button 20: Typewriter Erase */
+        .btn-20 {
+            background: #2d3436;
+            border: 2px solid #636e72;
+            color: transparent;
+            width: 150px;
+            position: relative;
+        }
+        .btn-20::before {
+            content: 'ERASE';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #2d3436;
+            color: white;
+        }
+        .btn-20:hover {
+            animation: typeErase 1s forwards;
+        }
+        @keyframes typeErase {
+            0% { width: 150px; }
+            100% { width: 0; padding: 15px 0; }
+        }
+
+        /* Button 21: Disappear */
+        .btn-21 {
+            background: linear-gradient(45deg, #fd79a8, #e84393);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+        .btn-21:hover {
+            opacity: 0;
+            transform: scale(0) rotate(360deg);
+        }
+
+        /* Button 22: Matrix Rain */
+        .btn-22 {
+            background: #000;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-22::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: #00ff00;
+            animation: matrixRain 0.8s linear infinite;
+        }
+        @keyframes matrixRain {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
+        .btn-22:hover {
+            box-shadow: 0 0 20px #00ff00;
+        }
+
+        /* Button 23: Melt Effect */
+        .btn-23 {
+            background: linear-gradient(45deg, #fdcb6e, #e17055);
+        }
+        .btn-23:hover {
+            animation: melt 1s forwards;
+        }
+        @keyframes melt {
+            0% { transform: translateY(0) rotate(0); border-radius: 8px; }
+            100% { transform: translateY(100px) rotate(20deg); border-radius: 50%; opacity: 0; }
+        }
+
+        /* Button 24: Flash Bang */
+        .btn-24 {
+            background: #6c5ce7;
+            color: white;
+        }
+        .btn-24:hover {
+            animation: flashBang 0.3s 3;
+        }
+        @keyframes flashBang {
+            0%, 100% { 
+                background: #6c5ce7;
+                box-shadow: 0 0 0 rgba(108, 92, 231, 0);
+            }
+            50% { 
+                background: white;
+                color: #6c5ce7;
+                box-shadow: 0 0 30px rgba(108, 92, 231, 0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Modern Animated Buttons Collection - More</h1>
+
+    <!-- Your existing buttons... -->
+    
+    <div class="button-container">
+        <div class="label">Shatter Effect</div>
+        <button class="btn btn-17">SHATTER</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Pixel Glitch</div>
+        <button class="btn btn-18">GLITCH</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Float Away</div>
+        <button class="btn btn-19">FLOAT</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Typewriter Erase</div>
+        <button class="btn btn-20">ERASE</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Disappear</div>
+        <button class="btn btn-21">DISAPPEAR</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Matrix Rain</div>
+        <button class="btn btn-22">MATRIX</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Melt Effect</div>
+        <button class="btn btn-23">MELT</button>
+    </div>
+
+    <div class="button-container">
+        <div class="label">Flash Bang</div>
+        <button class="btn btn-24">FLASH</button>
+    </div>
+
+    <script>
+        // Reset shatter button after animation
+        document.querySelector('.btn-17').addEventListener('animationend', function(e) {
+            if (e.animationName === 'shatter') {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            }
+        });
+
+        // Reset melt button after animation
+        document.querySelector('.btn-23').addEventListener('animationend', function(e) {
+            if (e.animationName === 'melt') {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            }
+        });
+
+        // Typewriter erase reset
+        document.querySelector('.btn-20').addEventListener('animationend', function(e) {
+            if (e.animationName === 'typeErase') {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 500);
+            }
+        });
+
+        // Add sound effects
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Add your existing sound effects or new ones
+                if (this.classList.contains('btn-17')) {
+                    // Shatter sound effect
+                    playSound(150, 0.2, 0.1);
+                } else if (this.classList.contains('btn-24')) {
+                    // Flash bang sound
+                    playSound(300, 0.3, 0.05);
+                }
+            });
+        });
+
+        function playSound(freq, vol, duration) {
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = freq;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(vol, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+    </script>
+</body>
+</html>
